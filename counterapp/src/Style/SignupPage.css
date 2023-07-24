@@ -1,0 +1,94 @@
+.container {
+  border: 2px solid grey;
+  width: 20%;
+  margin: auto;
+  /* box-shadow: 1px 1px 10px brown; */
+  color: gray;
+  /* font-weight: 600; */
+  margin-top: 4%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+.form {
+  /* display: grid; */
+  display: grid;
+  gap: 10px;
+  margin: 5px;
+  /* width: 100%; */
+  /* margin: auto; */
+}
+.form > input {
+  padding: 15px;
+  /* border: none; */
+  border: 2px solid pink;
+  border-radius: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  /* width: auto; */
+ 
+}
+.form > button {
+  padding: 15px;
+  border: none;
+  /* border: 2px solid red; */
+  border-radius: 10px;
+  font-size: 20px;
+  /* text-decoration: none; */
+  background-color: pink;
+  color: aliceblue;
+  font-weight: 500;
+}
+.linkSpan {
+  /* display: flex; */
+  color: rgb(250, 71, 71);
+  text-decoration: underline;
+}
+.warnigntext{
+ margin: 0px;
+ color: green;text-align: left;
+}
+
+@media screen and (max-width: 380px)  {
+  .container {
+    border: 2px solid grey;
+    width: 80%;
+    margin: auto;
+    /* box-shadow: 1px 1px 10px brown; */
+    color: gray;
+    /* font-weight: 600; */
+    margin-top: 4%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .form {
+    /* display: grid; */
+    display: grid;
+    gap: 10px;
+    margin: 5px;
+    /* width: 100%; */
+    /* margin: auto; */
+  }
+  .form > input {
+    padding: 15px;
+    /* border: none; */
+    border: 2px solid pink;
+    border-radius: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    /* width: auto; */
+   
+  }
+  .form > button {
+    padding: 15px;
+    border: none;
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    font-size: 20px;
+    /* text-decoration: none; */
+    background-color: pink;
+    color: aliceblue;
+    font-weight: 500;
+  }
+}

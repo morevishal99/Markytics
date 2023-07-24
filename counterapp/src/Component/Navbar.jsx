@@ -1,8 +1,13 @@
 import React from 'react'
+import "../Style/Navbar.css"
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <>
+      <div className='navbar'>
+        <h3>Navbar</h3>
+      </div>
+    </>
   )
 }
 
