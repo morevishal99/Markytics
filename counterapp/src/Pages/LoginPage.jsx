@@ -14,7 +14,10 @@ const LoginPage = () => {
     if (email && currentPassword && password) {   //check if all fileds are not empty 
       let filteruser = usersDetails.filter((item) => item.email === email) //check if user is present or not
       console.log('filteruser: ', filteruser);
+     
       if (filteruser.length === 1) {  //if user present navigate to counter page
+        localStorage.setItem("email",filteruser[0].email)
+        localStorage.setItem("name",filteruser[0].name)
         alert("Login Success")
         navigate("/counter")
         return

@@ -1,4 +1,3 @@
-// counterReducer.js
 import { INCREMENT, DECREMENT } from './action.type';
 
 const initialState = {

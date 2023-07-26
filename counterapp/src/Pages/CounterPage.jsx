@@ -39,12 +39,24 @@ const CounterPage = () => {
             },
         ],
     };
+    const style = {
+        display: "flex",
+        gap: "60px",
+        justifyContent: "center",
+        border: "1px solid white",
+        borderRadius: "10px",
+        width: "60%",
+        margin: "auto",
+        boxShadow: "10px 10px 100px black",
+        marginTop: "20px"
+    }
+
     return (
         <>
             <h3>
                 Counter Page
             </h3>
-            <div className='chartContainer' style={{ display: "flex", gap: "60px", justifyContent: "center" }}>
+            <div className='chartContainer' style={style}>
                 <div>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
                     <div key={index}>
                         <h1>{key.toUpperCase()}:{value}</h1>

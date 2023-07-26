@@ -1,7 +1,11 @@
 .navbar {
-  /* height: 50px; */
-  /* background-color: white; */
   box-shadow: 10px 10px 100px white;
   padding: 5px;
   color: red;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar>button{
+  /* height: 30px; */
+  /* margin: auto; */
 }
