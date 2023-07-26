@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { decrementCounter, incrementCounter } from '../Redux/action';
+import CounterChart from './CounterChart';
 
 const CounterPage = () => {
     const [counter, setcounter] = useState({ a: 0, b: 0, c: 0 });//normal counter object 
@@ -19,19 +20,41 @@ const CounterPage = () => {
         // }))
         dispatch(decrementCounter(key))
     }
+    let labels = []     // lebel array to get key value from object 
+    let counterValue = []     // countervalue  array to get value from counter object
+    for (let key in counterStore) {
+        labels.push(key)
+        counterValue.push(counterStore[key])
+    }
+    const data = {
+        labels: labels,
+
+        datasets: [
+            {
+                label: "COUNTER CHART",
+                backgroundColor: "rgb(255, 99, 132)",
+                borderColor: "rgb(255, 99, 132)",
+                // data: [counter.a, counter.b, counter.c],
+                data: counterValue,
+            },
+        ],
+    };
     return (
         <>
-            <div>
+            <h3>
                 Counter Page
-            </div>
-            <div>{Object.entries(counterStore).map(([key, value],index) => //counter object mapped here
-                <div key={index}>
-                    <h1>{key.toUpperCase()}:{value}</h1>
-                    <button onClick={() => increment(key, value)}>INC</button> 
-                    <button disabled={value === 0} onClick={() => decrement(key, value)}>DEC</button>
-                </div>
+            </h3>
+            <div className='chartContainer' style={{ display: "flex", gap: "60px", justifyContent: "center" }}>
+                <div>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
+                    <div key={index}>
+                        <h1>{key.toUpperCase()}:{value}</h1>
+                        <button onClick={() => increment(key, value)}>INC</button>
+                        <button disabled={value === 0} onClick={() => decrement(key, value)}>DEC</button>
+                    </div>
 
-            )}</div>
+                )}</div>
+                <div className='chart' style={{ width: "700px" }}>{<CounterChart data={data} />}</div>
+            </div>
         </>
     )
 }
