@@ -18,11 +18,11 @@
     display: grid;
     gap: 10px;
     justify-content: center;
-    /* border: 1px solid #eee; */
-    /* border-radius: 10px; */
+    border: 1px solid #eee;
+    border-radius: 10px;
     width: 80%;
     margin: auto;
-    /* box-shadow: 10px 10px 100px black; */
+    box-shadow: 10px 10px 100px black;
     margin-top:10px;
   }
   .chart {
