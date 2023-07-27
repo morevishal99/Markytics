@@ -16,13 +16,13 @@ const Sidebar = () => {
             <div className="sidebar">
 
                 <div className='sidebarMenu'>
-                    <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('dashboard')}>
-                        <li ><RxDashboard /></li>
-                        <li>Dashboard</li>
-                    </ul>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('profile')} >
                         <li ><AiOutlineUser /></li>
                         <li>Profile</li>
+                    </ul>
+                    <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('dashboard')}>
+                        <li ><RxDashboard /></li>
+                        <li>Dashboard</li>
                     </ul>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('notification')} >
                         <li ><AiTwotoneBell /></li>
