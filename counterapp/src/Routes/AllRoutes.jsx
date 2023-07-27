@@ -1,6 +1,6 @@
 import React from 'react'
 // import Routes from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import CounterPage from '../Pages/CounterPage'
 import LoginPage from '../Pages/LoginPage'
 import SignupPage from '../Pages/SignupPage'

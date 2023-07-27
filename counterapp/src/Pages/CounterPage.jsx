@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { decrementCounter, incrementCounter } from '../Redux/action';
 import CounterChart from './CounterChart';
 import "../Style/CounterPage.css"
 
 const CounterPage = () => {
-    const [counter, setcounter] = useState({ a: 0, b: 0, c: 0 });//normal counter object 
+    // const [counter, setcounter] = useState({ a: 0, b: 0, c: 0 });//normal counter object 
     const counterStore = useSelector((store) => store)//counter object from redux store
     // console.log('counterStore: ', counterStore);
     const dispatch = useDispatch()
@@ -40,17 +40,17 @@ const CounterPage = () => {
             },
         ],
     };
-    const style = {
-        display: "flex",
-        gap: "60px",
-        justifyContent: "center",
-        border: "1px solid white",
-        borderRadius: "10px",
-        width: "60%",
-        margin: "auto",
-        boxShadow: "10px 10px 100px black",
-        marginTop: "20px"
-    }
+    // const style = {
+    //     display: "flex",
+    //     gap: "60px",
+    //     justifyContent: "center",
+    //     border: "1px solid white",
+    //     borderRadius: "10px",
+    //     width: "60%",
+    //     margin: "auto",
+    //     boxShadow: "10px 10px 100px black",
+    //     marginTop: "20px"
+    // }
 
     return (
         <>

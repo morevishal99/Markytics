@@ -1,10 +1,10 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 import "../Style/Navbar.css"
 
 const Navbar = () => {
   const name = localStorage.getItem("name")
-  const email = localStorage.getItem("email")
+  // const email = localStorage.getItem("email")
   const navigate = useNavigate()
   const handleLogout = () => {
     // setTimeout(()=>{
