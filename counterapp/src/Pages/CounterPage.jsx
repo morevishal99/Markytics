@@ -57,7 +57,7 @@ const CounterPage = () => {
            
             <div className='chartContainer' >
                 <div>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
-                    <div key={index}>
+                    <div className='counterDiv' key={index}>
                         <h1>{key.toUpperCase()}:{value}</h1>
                         <button onClick={() => increment(key, value)}>INC</button>
                         <button disabled={value === 0} onClick={() => decrement(key, value)}>DEC</button>

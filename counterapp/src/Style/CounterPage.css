@@ -2,32 +2,41 @@
   display: flex;
   gap: 60px;
   justify-content: center;
-  border: 1px solid #eee;
+  border: 1px solid black;
   border-radius: 10px;
   width: 60%;
   margin: auto;
-  box-shadow: 10px 10px 100px black;
+  /* box-shadow: 10px 10px 10px 1px rgb(246, 19, 19); */
   margin-top: 20px;
   padding: 10px;
 }
 .chart {
-  width: 600px;
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+.counterDiv > button {
+  border: none;
+  color: red;
+  padding: 5px;
+  background-color: none;
+  margin: 5px;
 }
 @media screen and (max-width: 550px) {
   .chartContainer {
     display: grid;
     gap: 10px;
     justify-content: center;
-    border: 1px solid #eee;
+    border: 1px solid black;
     border-radius: 10px;
     width: 80%;
     margin: auto;
-    box-shadow: 10px 10px 100px black;
-    margin-top:10px;
+    /* box-shadow: 10px 10px 10px 1px rgb(246, 19, 19); */
+    margin-top: 100px;
   }
   .chart {
     display: block;
-    width:100%;
+    width: 100%;
     margin: auto;
   }
 }
