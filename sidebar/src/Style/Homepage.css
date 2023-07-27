@@ -1,19 +1,34 @@
-.homeContainer {
+.sidebar {
   display: flex;
   justify-content: space-around;
   width: 90%;
   margin: auto;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 5px;
   height: 300px;
 }
-.sidebar {
-  width: 25%;
-  margin: auto;
-  border: 1px solid red;
+.sidebarMenu {
+  width: 18%;
+  text-align: left;
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  color: grey;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.dashboard {
-  width: 70%;
-  margin: auto;
-  border: 1px solid red;
+.sidebarMenu_ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  justify-content: left;
+
+}
+.sidebarContent {
+  width: 75%;
+  padding: 5px;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
