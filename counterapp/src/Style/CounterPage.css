@@ -1,0 +1,33 @@
+.chartContainer {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  width: 60%;
+  margin: auto;
+  box-shadow: 10px 10px 100px black;
+  margin-top: 20px;
+  padding: 10px;
+}
+.chart {
+  width: 600px;
+}
+@media screen and (max-width: 550px) {
+  .chartContainer {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    /* border: 1px solid #eee; */
+    /* border-radius: 10px; */
+    width: 80%;
+    margin: auto;
+    /* box-shadow: 10px 10px 100px black; */
+    margin-top:10px;
+  }
+  .chart {
+    display: block;
+    width:100%;
+    margin: auto;
+  }
+}

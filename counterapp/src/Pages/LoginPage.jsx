@@ -33,7 +33,7 @@ const LoginPage = () => {
   }
 
   useEffect(() => {
-    if (password && currentPassword) {
+    if (password && currentPassword) { //check if password or currentPassword matches
       if (password === currentPassword) {
         setwarnigntext("It Seems Good")
       } else {

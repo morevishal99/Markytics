@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { decrementCounter, incrementCounter } from '../Redux/action';
 import CounterChart from './CounterChart';
+import "../Style/CounterPage.css"
 
 const CounterPage = () => {
     const [counter, setcounter] = useState({ a: 0, b: 0, c: 0 });//normal counter object 
@@ -53,10 +54,8 @@ const CounterPage = () => {
 
     return (
         <>
-            <h3>
-                Counter Page
-            </h3>
-            <div className='chartContainer' style={style}>
+           
+            <div className='chartContainer' >
                 <div>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
                     <div key={index}>
                         <h1>{key.toUpperCase()}:{value}</h1>
@@ -65,7 +64,7 @@ const CounterPage = () => {
                     </div>
 
                 )}</div>
-                <div className='chart' style={{ width: "700px" }}>{<CounterChart data={data} />}</div>
+                <div className='chart' >{<CounterChart data={data} />}</div>
             </div>
         </>
     )
