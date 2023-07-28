@@ -58,16 +58,18 @@ const CounterPage = () => {
         <>
 
             <div className='chartContainer' >
-                <div>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
-                    <div className='counterDiv' key={index}>
+
+                <div className='counterDiv'>{Object.entries(counterStore).map(([key, value], index) => //counter object mapped here
+                    <div key={index}>
                         <h1>{key.toUpperCase()}:{value}</h1>
                         {/* <button onClick={() => increment(key, value)}>INC</button> */}
                         {/* <button disabled={value === 0} onClick={() => decrement(key, value)}>DEC</button> */}
-                        <button onClick={() => dispatch(increment({ key }))}>Increment </button>
-                        <button disabled={value === 0} onClick={() => dispatch(decrement({ key }))}>Decrement </button>
+                        <button onClick={() => dispatch(increment({ key }))}>Inc </button>
+                        <button disabled={value === 0} onClick={() => dispatch(decrement({ key }))}>Dec </button>
                     </div>
 
                 )}</div>
+
                 <div className='chart' >{<CounterChart data={data} />}</div>
             </div>
         </>

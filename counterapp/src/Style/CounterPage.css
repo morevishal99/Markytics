@@ -1,42 +1,52 @@
 .chartContainer {
   display: flex;
   gap: 60px;
-  justify-content: center;
+  justify-content: space-around;
   border: 1px solid black;
   border-radius: 10px;
-  width: 60%;
+  width: 90%;
   margin: auto;
-  /* box-shadow: 10px 10px 10px 1px rgb(246, 19, 19); */
   margin-top: 20px;
   padding: 10px;
 }
+.counterDiv {
+  width: 30%;
+}
+.counterDiv > div > h1 {
+  /* width: 30%; */
+  color: grey;
+}
 .chart {
-  display: block;
-  width: 100%;
+  width: 70%;
   margin: auto;
 }
-.counterDiv > button {
+
+.counterDiv > div > button {
   border: none;
   color: red;
   padding: 5px;
   background-color: none;
   margin: 5px;
 }
-@media screen and (max-width: 550px) {
+@media only screen and (max-width:550px) {
   .chartContainer {
     display: grid;
-    gap: 10px;
-    justify-content: center;
+    gap: 60px;
+    justify-content: space-around;
     border: 1px solid black;
     border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .counterDiv {
     width: 80%;
     margin: auto;
-    /* box-shadow: 10px 10px 10px 1px rgb(246, 19, 19); */
-    margin-top: 100px;
   }
+  
   .chart {
-    display: block;
-    width: 100%;
-    margin: auto;
+    width: 300px;
   }
+
 }
