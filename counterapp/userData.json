@@ -11,6 +11,18 @@
       "email": "vishal@gmail.com",
       "password": "vishal",
       "id": 2
+    },
+    {
+      "name": "vishal",
+      "email": "moevishal079@gmail..com",
+      "password": "vishal",
+      "id": 3
+    },
+    {
+      "name": "hello",
+      "email": "hello@gmail.com",
+      "password": "hello",
+      "id": 4
     }
   ]
 }
