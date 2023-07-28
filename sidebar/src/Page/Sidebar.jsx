@@ -56,40 +56,43 @@ const Sidebar = () => {
                     </div>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('profile')} >
                         <li ><AiOutlineUser /></li>
-                        <li>Profile</li>
+                        <li className='sidebarMenu_ul_menu'>Profile</li>
                     </ul>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('todo')}>
                         <li ><MdOutlineNotes /></li>
-                        <li>Todo</li>
+                        <li className='sidebarMenu_ul_menu'>Todo</li>
                     </ul>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('counter')}>
                         <li ><PiClockCounterClockwiseFill /></li>
-                        <li>Counter</li>
+                        <li className='sidebarMenu_ul_menu'>Counter</li>
                     </ul>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('dashboard')}>
                         <li ><RxDashboard /></li>
-                        <li>Dashboard</li>
+                        <li className='sidebarMenu_ul_menu'>Dashboard</li>
                     </ul>
 
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('notification')} >
                         <li ><AiTwotoneBell /></li>
-                        <li>Notification</li>
+                        <li className='sidebarMenu_ul_menu'>Notification</li>
                     </ul>
                     {isSignIn ? <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('login')} >
                         <li ><PiSignInBold /></li>
-                        <li>Login</li>
+                        <li className='sidebarMenu_ul_menu'>Login</li>
                     </ul> : <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('signin')} >
                         <li ><PiSignInBold /></li>
-                        <li>SignIn</li>
+                        <li className='sidebarMenu_ul_menu'>SignIn</li>
                     </ul>}
 
 
                     {/* theme toggle button */}
-                    <div className='toggleTheme sidebarMenu_ul'>
+                    <div className=' sidebarMenu_ul'>
                         <FormControl display='flex'  >
-                            <FormLabel htmlFor='swicththeme' mb='0' display='flex' gap={"20px"} >
-                                {isChecked === true ? <BiMoon /> : <BsSun />} {isChecked === true ? "Dark Mode" : "Ligth Mode"}
+                            <div className='toggleTheme'>
+
+                            <FormLabel htmlFor='swicththeme'  >
+                                {isChecked === true ? <BiMoon /> : <BsSun />} 
                             </FormLabel>
+                            </div>
                             <Switch
                                 id="theme"
                                 isChecked={isChecked}

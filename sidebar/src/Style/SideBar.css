@@ -48,4 +48,41 @@
     justify-content: space-around;
     gap: 20px;
 }
-
+@media (max-width: 540px) {
+  .sidebarMenu_ul_menu {
+    display: none;
+  }
+  .toggleTheme{
+    display: none;
+  }
+}
+@media (min-width:541px)and (max-width:1000px){
+  .sidebar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto;
+    /* border: 2px solid black; */
+    padding: 5px;
+    /* height: 300px; */
+    /* background-color: ; */
+  }
+  .sidebarMenu {
+    width: 22%;
+    text-align: left;
+    /* padding: 5px; */
+    font-size: 17px;
+    margin-top: 20px;
+    color: grey;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .sidebarContent {
+    width: 70%;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
