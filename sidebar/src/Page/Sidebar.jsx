@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Switch } from '@chakra-ui/react'
 import { FormControl, FormLabel } from '@chakra-ui/react'
 import { AiOutlineUser, AiTwotoneBell } from "react-icons/ai";
@@ -8,16 +8,26 @@ import { BsSun } from "react-icons/bs";
 import { BiMoon } from "react-icons/bi";
 import { GrNotes } from "react-icons/gr";
 import { MdOutlineNotes } from "react-icons/md";
-import { PiClockCounterClockwiseFill } from "react-icons/pi";
+import { PiClockCounterClockwiseFill, PiSignInBold } from "react-icons/pi";
 import Notification from '../sidebarComponent/Notification';
 import Profile from '../sidebarComponent/Profile'
 import "../Style/SideBar.css"
 import Todo from '../sidebarComponent/Todo';
 import CounterPage from '../sidebarComponent/Counter';
+import SignupPage from '../sidebarComponent/Signin';
+import { useSelector, useDispatch } from "react-redux";
+import LoginPage from '../sidebarComponent/Login';
+
 const Sidebar = () => {
-    const [activeComponent, setActiveComponent] = useState("dashboard");
+    const isSignIn = useSelector((state) => state.user.isSiggnedIn)
+    // console.log('isSignIn: ', isSignIn);
+    const isLogin = useSelector((state) => state.user.isLoggedIn)
+    // console.log('isLogin: ', isLogin);
+    // console.log('state: ', isSignIn);
+    const [activeComponent, setActiveComponent] = useState("signin");
     const handleComponentClick = (componentName) => {
-        setActiveComponent(componentName);
+        if (isSignIn || isLogin) setActiveComponent(componentName);
+        // else{ setActiveComponent("")}
     };
     const [isChecked, setIsChecked] = useState(true);
     // console.log('isChecked: ', isChecked);
@@ -33,6 +43,10 @@ const Sidebar = () => {
         color: 'grey',
         marginTop: "20px"
     }
+    useEffect(() => {
+        if (!isSignIn && isLogin) setActiveComponent("profile")
+        else if (isSignIn) setActiveComponent("login")
+    }, [isSignIn]);
     return (
         <>
             <div className="sidebar" >
@@ -56,11 +70,19 @@ const Sidebar = () => {
                         <li ><RxDashboard /></li>
                         <li>Dashboard</li>
                     </ul>
-                    
+
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('notification')} >
                         <li ><AiTwotoneBell /></li>
                         <li>Notification</li>
                     </ul>
+                    {isSignIn ? <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('login')} >
+                        <li ><PiSignInBold /></li>
+                        <li>Login</li>
+                    </ul> : <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('signin')} >
+                        <li ><PiSignInBold /></li>
+                        <li>SignIn</li>
+                    </ul>}
+
 
                     {/* theme toggle button */}
                     <div className='toggleTheme sidebarMenu_ul'>
@@ -76,12 +98,18 @@ const Sidebar = () => {
                     </div>
                 </div>
 
+
                 <div className="sidebarContent" style={isChecked === true ? light : dark} >
                     {activeComponent === 'dashboard' && <Dashboard />}
                     {activeComponent === 'profile' && <Profile />}
                     {activeComponent === 'notification' && <Notification />}
                     {activeComponent === 'todo' && <Todo />}
                     {activeComponent === 'counter' && <CounterPage />}
+                    {activeComponent === 'login' && <LoginPage />}
+                    {activeComponent === 'signin' && <SignupPage />}
+                    {/* {isSignIn === true ? (activeComponent === 'login' && <LoginPage />) : (activeComponent === 'signin' && <SignupPage />)} */}
+
+
                 </div>
 
             </div>
