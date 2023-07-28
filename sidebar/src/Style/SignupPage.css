@@ -110,29 +110,22 @@
     border-radius: 10px;
   }
   .form {
-
     display: grid;
     gap: 10px;
     margin: 5px;
-    /* width: 100%; */
-    /* margin: auto; */
   }
   .form > input {
     padding: 15px;
-    /* border: none; */
-    border: 2px solid pink;
+    border: 2px solid rgb(128, 128, 226);
     border-radius: 10px;
     font-size: 15px;
     text-decoration: none;
-    /* width: auto; */
   }
   .form > button {
     padding: 15px;
     border: none;
-    /* border: 2px solid red; */
     border-radius: 10px;
     font-size: 20px;
-    /* text-decoration: none; */
     background-color: pink;
     color: aliceblue;
     font-weight: 500;
