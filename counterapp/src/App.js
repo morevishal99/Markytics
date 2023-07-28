@@ -3,6 +3,7 @@ import './App.css';
 import CounterPage from './Pages/CounterPage';
 import AllRoutes from './Routes/AllRoutes';
 import Navbar from './Component/Navbar';
+import Footer from './Component/Footer.jsx';
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <div className="App" >
       <Navbar />
       <AllRoutes />
+      <Footer/>
     </div>
   );
 }

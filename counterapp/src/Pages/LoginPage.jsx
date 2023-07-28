@@ -46,7 +46,7 @@ const LoginPage = () => {
         localStorage.setItem("email", data[0].email)
         localStorage.setItem("name", data[0].name)
         alert("Login Success")
-        navigate("/counter")
+        navigate("/dashboard")
         return
       }
       else {//if user not present redirect to signin page
