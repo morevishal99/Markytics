@@ -38,8 +38,8 @@ const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state, action) => {
-      state[action.payload.key] += 1;
       // state[action.payload.key] =state[action.payload.key]+ 1;
+      state[action.payload.key] += 1;
     },
     decrement: (state, action) => {
       state[action.payload.key] -= 1;
