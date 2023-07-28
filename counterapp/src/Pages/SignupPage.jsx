@@ -51,6 +51,7 @@ const SignupPage = () => {
           body: JSON.stringify(payload)
         })
         alert("signin sucessfull")
+        navigate("/login")
       }
       // console.log('data: ', data);
 

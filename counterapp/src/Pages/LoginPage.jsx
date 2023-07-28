@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setUserDetails, setLoginStatus } from "../Redux/UserReducer/userReducer"; // Replace this with the actual path to your userSlice
+
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -9,6 +12,8 @@ const LoginPage = () => {
   const [warnigntext, setwarnigntext] = useState(false);
   const usersDetails = JSON.parse(localStorage.getItem("userDetail")) || [] // get all user data  form localStorage
   // console.log('usersDetails: ', usersDetails);
+  const dispatch = useDispatch();
+
 
   const handlFormData = async () => {
     if (email && currentPassword && password) {   //check if all fileds are not empty 
@@ -31,7 +36,13 @@ const LoginPage = () => {
       let data = await res.json()
       console.log('data: ', data);
       if (data) {
-
+        const payload = {
+          name: data[0].name,
+          email: data[0].email
+        }
+        console.log('payload: ', payload);
+        dispatch(setUserDetails(payload));
+        dispatch(setLoginStatus(true));
         localStorage.setItem("email", data[0].email)
         localStorage.setItem("name", data[0].name)
         alert("Login Success")

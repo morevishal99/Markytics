@@ -1,11 +1,16 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import "../Style/Navbar.css"
+import { useSelector, useDispatch } from "react-redux";
+
 
 const Navbar = () => {
   const name = localStorage.getItem("name")
   // const email = localStorage.getItem("email")
   const navigate = useNavigate()
+  const user = useSelector((state) => state.user);
+  console.log('user: ', user);
+
   const handleLogout = () => {
     // setTimeout(()=>{
     //   alert("Logged Out")
