@@ -99,19 +99,19 @@
 
 // export default LoginPage;
 
-export default function Login() {
-  const dispatch = useDispatch();
-  const SignInWithGoogle = () => {
-    auth
-      .signInWithPopup(googleProvider)
-      .then((res) => {
-        const { displayName, email } = res.user;
-        dispatch(loginAction(res.user.providerData));
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+// export default function Login() {
+//   const dispatch = useDispatch();
+//   const SignInWithGoogle = () => {
+//     auth
+//       .signInWithPopup(googleProvider)
+//       .then((res) => {
+//         const { displayName, email } = res.user;
+//         dispatch(loginAction(res.user.providerData));
+//       })
+//       .catch((error) => {
+//         console.log(error.message);
+//       });
+//   };
 
-  return <LogginButton SignInWithGoogle={SignInWithGoogle}></LogginButton>;
-}
+//   return <LogginButton SignInWithGoogle={SignInWithGoogle}></LogginButton>;
+// }
