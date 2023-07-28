@@ -1,0 +1,53 @@
+.chartContainer {
+  display: flex;
+  gap: 60px;
+  justify-content: space-around;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  
+}
+.counterDiv {
+  width: 30%;
+}
+.counterDiv > div > h1 {
+  /* width: 30%; */
+  color: grey;
+}
+.chart {
+  width: 70%;
+  margin: auto;
+}
+
+.counterDiv > div > button {
+  border: none;
+  color: red;
+  padding: 5px;
+  background-color: none;
+  margin: 5px;
+}
+@media only screen and (max-width:550px) {
+  .chartContainer {
+    display: grid;
+    gap: 60px;
+    justify-content: space-around;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .counterDiv {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .chart {
+    width: 300px;
+  }
+
+}
