@@ -24,7 +24,7 @@ const Todo = () => {
         <>
             <h1>Todo App</h1>
             <div style={{ width: "70%", margin: "auto" }}>
-                <input style={{ border: "1px solid red", borderRadius: "10px", marginTop: "20px" }} type="text" value={todoValue} onInput={(e) => settodoValue(e.target.value)} />
+                <input style={{ border: "1px solid red", borderRadius: "10px",width:"90%",margin:"auto", marginTop: "20px" }} type="text" value={todoValue} onInput={(e) => settodoValue(e.target.value)} />
                 <button disabled={!todoValue} onClick={handleSubmit}>ADD</button>
                 {/* <h1>{todoValue}</h1> */}
                 {todo?.map((item, index) =>
