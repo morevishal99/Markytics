@@ -3,8 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     name: "",
     email: "",
-    isLoggedIn: false, // Add the isLoggedIn field to track login status
-    isSiggnedIn: false, // Add the isLoggedIn field to track login status
+    // isLoggedIn: false, // Add the isLoggedIn field to track login status
+    isLoggedIn: true, // Add the isLoggedIn field to track login status
+    isSiggnedIn: true, // Add the isLoggedIn field to track login status
 };
 
 const userSlice = createSlice({
@@ -25,5 +26,5 @@ const userSlice = createSlice({
     },
 });
 
-export const { setUserDetails, setLoginStatus,setSigninStatus } = userSlice.actions;
+export const { setUserDetails, setLoginStatus, setSigninStatus } = userSlice.actions;
 export default userSlice.reducer;

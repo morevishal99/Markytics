@@ -2,21 +2,21 @@ import React, { useEffect, useState } from 'react'
 import { Switch } from '@chakra-ui/react'
 import { FormControl, FormLabel } from '@chakra-ui/react'
 import { AiOutlineUser, AiTwotoneBell } from "react-icons/ai";
-import Dashboard from '../sidebarComponent/Dashboard'
+import Dashboard from '../Pages/Dashboard'
 import { RxDashboard } from "react-icons/rx";
 import { BsSun } from "react-icons/bs";
 import { BiMoon } from "react-icons/bi";
 import { GrNotes } from "react-icons/gr";
 import { MdOutlineNotes } from "react-icons/md";
 import { PiClockCounterClockwiseFill, PiSignInBold } from "react-icons/pi";
-import Notification from '../sidebarComponent/Notification';
-import Profile from '../sidebarComponent/Profile'
+import Notification from '../Pages/Notification';
+import Profile from '../Pages/Profile'
 import "../Style/SideBar.css"
-import Todo from '../sidebarComponent/Todo';
-import CounterPage from '../sidebarComponent/Counter';
-import SignupPage from '../sidebarComponent/Signin';
+import Todo from '../Pages/Todo';
+import CounterPage from '../Pages/Counter';
+import SignupPage from '../Pages/Signin';
 import { useSelector, useDispatch } from "react-redux";
-import LoginPage from '../sidebarComponent/Login';
+import LoginPage from '../Pages/Login';
 
 const Sidebar = () => {
     const isSignIn = useSelector((state) => state.user.isSiggnedIn)
@@ -24,6 +24,8 @@ const Sidebar = () => {
     const isLogin = useSelector((state) => state.user.isLoggedIn)
     // console.log('isLogin: ', isLogin);
     // console.log('state: ', isSignIn);
+    const userName = useSelector((state) => state.user.name)
+    console.log('state: ', userName);
     const [activeComponent, setActiveComponent] = useState("signin");
     const handleComponentClick = (componentName) => {
         if (isSignIn || isLogin) setActiveComponent(componentName);
@@ -52,7 +54,8 @@ const Sidebar = () => {
             <div className="sidebar" >
 
                 <div className='sidebarMenu' style={isChecked === true ? light : dark} >
-                    <div className='userName'  >{"Vishal"}
+                    <div className='userName'  >
+                        {userName?`Welcome Back ${userName}`:"Login Please"}
                     </div>
                     <ul className='sidebarMenu_ul' onClick={() => handleComponentClick('profile')} >
                         <li ><AiOutlineUser /></li>
@@ -89,9 +92,9 @@ const Sidebar = () => {
                         <FormControl display='flex'  >
                             <div className='toggleTheme'>
 
-                            <FormLabel htmlFor='swicththeme'  >
-                                {isChecked === true ? <BiMoon /> : <BsSun />} 
-                            </FormLabel>
+                                <FormLabel htmlFor='swicththeme'  >
+                                    {isChecked === true ? <BiMoon /> : <BsSun />}
+                                </FormLabel>
                             </div>
                             <Switch
                                 id="theme"
